@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import "./App.css"
-function App() {
- 
-  const [input, setInput] = useState("");
-  
-  return (
-    <div class="App-header">
-      <p>Digite su nombre: {input} </p>
-      <div class= "App-input">
-        <input class ="App-input" value={input} onInput={e => setInput(e.target.value)}/>
-      </div>
+import Challenger1 from "../src/Challenger1.js"
+import Challenge2 from "../src/Challenger2.js"
+import PersonList from '../src/PersonList.js';
+
+function Reto (){
+  return(
+    <div>
+      <Challenger1/>
+      {/* <Challenge2/> */}
+      <PersonList/>
     </div>
-    
-  );
- 
+  )
 }
-export default App
+
+export default Reto
