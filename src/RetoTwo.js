@@ -5,7 +5,7 @@ function PersonList (){
     const [Covid, setCovid] = useState([]);
     const getCovid =() => {
         axios
-        .get("https://www.datos.gov.co/resource/gt2j-8ykr.json?ciudad_de_ubicaci_n=Marinilla&fecha_diagnostico=2020-08-06T00:00:00.000" )
+        .get("https://www.datos.gov.co/resource/gt2j-8ykr.json?ciudad_de_ubicaci_n=Marinilla&fecha_diagnostico=2020-08-01T00:00:00.000" )
         .then((res)=>{
             setCovid(res.data)
         })
@@ -21,24 +21,32 @@ function PersonList (){
                 <input class ="Help-input" type = "date" value={date} onInput={d => setDate(d.target.value)}/>
                 <button class = "button-input" onClick={getCovid}>Search</button>
                 <br/>
-                <ul>
-                    {Covid.map((Covid) => {
-                        return(
-                            <li>
-                                {(date + "T00:00:00.000" === Covid.fecha_diagnostico) && (input === Covid.ciudad_de_ubicaci_n) && (  
-                                                    
-                                    <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4" > 
-                                        
-                                        <div class="col col-lg ">Edad: {Covid.edad} </div>
-                                        <div class="col col-lg">Sexo: {Covid.sexo}</div>
-                                        <div class="col col-lg">Tipo: {Covid.tipo}</div>
-                                        <div class="col col-lg">Estado: {Covid.estado}</div>
-                                    </div>
-                                )}
-                            </li>
-                        )          
-                    })}
-                </ul>
+                <li>
+                {Covid.map((Covid) => {
+                    return(
+                        <ul>
+                        {(date + "T00:00:00.000" === Covid.fecha_de_notificaci_n) && (input === Covid.ciudad_de_ubicaci_n)  && (
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="header" scope="col">Edad</th>
+                                        <th class="header" scope="col">Sexo</th>
+                                        <th class="header" scope="col">Tipo</th>
+                                        <th class="header" scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="col" >{Covid.edad}</td>
+                                        <td class="col" >{Covid.sexo}</td>
+                                        <td class="col" >{Covid.tipo}</td>
+                                        <td class="col" >{Covid.estado}</td>
+                                    </tr> 
+                                </tbody>
+                            </table>
+                        )}</ul>
+                    )          
+                })}</li>  
             </div>
         </div>
     )

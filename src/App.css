@@ -83,3 +83,14 @@
   border: 1px solid rgb(15, 15, 15);
   height: 3px;
 }
+thead tr th { 
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+}
+
+.table-responsive { 
+  height:200px;
+  overflow:scroll;
+}
