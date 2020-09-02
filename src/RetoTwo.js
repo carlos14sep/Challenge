@@ -19,32 +19,32 @@ function PersonList (){
                 <h3 className="my-4 text-center">Consulta sobre pacientes con Covid-19 en el Oriente Antioqueño</h3>
                 <div className="row">
                     <div className="col-3 offset-2">
-                        <input class ="form-control" placeholder="Municipio" type="text" value={city} onInput={e => setCity(e.target.value)}/>  
+                        <input className ="form-control" placeholder="Municipio" type="text" value={city} onInput={e => setCity(e.target.value)}/>  
                     </div>
                     <div className="col-3">
-                        <input class ="form-control" type = "date" value={date} onInput={d => setDate(d.target.value)}/>
+                        <input className ="form-control" type = "date" value={date} onInput={d => setDate(d.target.value)}/>
                     </div>
                     <div className="col-3">
                         <button className = "btn btn-secondary" onClick={getCovid}>Search</button>
                     </div>
                 </div>
-                <table className="table mt-5" >
+                <table className="table table-bordered table-dark mt-5" >
                     <thead className="thead-dark">
                         <tr>
-                            <th className="header" scope="col">Edad</th>
-                            <th className="header" scope="col">Sexo</th>
-                            <th className="header" scope="col">Tipo</th>
-                            <th className="header" scope="col">Estado</th>
+                            <th scope="col-3 right">Edad</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         {covidCases.map((covidCases, index) => {
                             return(
                                 <tr key={index}>
-                                    <td className="col" >{covidCases.edad}</td>
-                                    <td className="col" >{covidCases.sexo}</td>
-                                    <td className="col" >{covidCases.tipo}</td>
-                                    <td className="col" >{covidCases.estado}</td>
+                                    <td >{covidCases.edad}</td>
+                                    <td >{covidCases.sexo}</td>
+                                    <td >{covidCases.tipo}</td>
+                                    <td >{covidCases.estado}</td>
                                 </tr>
                             )
                         })} 
