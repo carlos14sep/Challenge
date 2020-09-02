@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import RetoOne from "./RetoOne.js"
+// import RetoOne from "./RetoOne.js"
 import RetoTwo from './RetoTwo.js';
 
 function Reto (){
   return(
     <div>
-      <RetoOne/>
+      {/* <RetoOne/> */}
       <RetoTwo/>
     </div>
   )
