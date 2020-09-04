@@ -5,8 +5,10 @@ import ChallengeTwo from './components/ChallengeTwo.js';
 function Challenge (){
   return(
     <div>
+
       {/* <RetoOne/> */}
       <ChallengeTwo/>
+
     </div>
   )
 }
