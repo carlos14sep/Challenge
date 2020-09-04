@@ -5,7 +5,7 @@ import RetoTwo from './RetoTwo.js';
 function Reto (){
   return(
     <div>
-      {/* <RetoOne/> */}
+      <RetoOne/>
       <RetoTwo/>
     </div>
   )
