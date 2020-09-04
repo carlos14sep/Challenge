@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Challenge/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Challenge/static/js/main.77dad9de.chunk.js",
+    "main.js.map": "/Challenge/static/js/main.77dad9de.chunk.js.map",
+    "runtime-main.js": "/Challenge/static/js/runtime-main.95ef9be4.js",
+    "runtime-main.js.map": "/Challenge/static/js/runtime-main.95ef9be4.js.map",
+    "static/css/2.f3cffc9e.chunk.css": "/Challenge/static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.53c1c8b1.chunk.js": "/Challenge/static/js/2.53c1c8b1.chunk.js",
+    "static/js/2.53c1c8b1.chunk.js.map": "/Challenge/static/js/2.53c1c8b1.chunk.js.map",
+    "index.html": "/Challenge/index.html",
+    "precache-manifest.0f0d3115657ffead3388ad6a8677621c.js": "/Challenge/precache-manifest.0f0d3115657ffead3388ad6a8677621c.js",
+    "service-worker.js": "/Challenge/service-worker.js",
+    "static/css/2.f3cffc9e.chunk.css.map": "/Challenge/static/css/2.f3cffc9e.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Challenge/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.53c1c8b1.chunk.js.LICENSE.txt": "/Challenge/static/js/2.53c1c8b1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95ef9be4.js",
+    "static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.53c1c8b1.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.77dad9de.chunk.js"
+  ]
+}
