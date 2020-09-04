@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import RetoOne from "./RetoOne.js"
-import RetoTwo from './RetoTwo.js';
+import ChallengeTwo from './components/ChallengeTwo.js';
 
-function Reto (){
+function Challenge (){
   return(
     <div>
       {/* <RetoOne/> */}
-      <RetoTwo/>
+      <ChallengeTwo/>
     </div>
   )
 }
 
-export default Reto
+export default Challenge

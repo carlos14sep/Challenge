@@ -31,7 +31,8 @@ function PersonList() {
                     <table className="table table-bordered table-dark mt-5" >
                         <thead className="thead-dark">
                             <tr>
-                                <th scope="col-3 right">Edad</th>
+                                <th scope="col-3 right">Posición</th>
+                                <th scope="col">Edad</th>
                                 <th scope="col">Sexo</th>
                                 <th scope="col">Tipo</th>
                                 <th scope="col">Estado</th>
@@ -41,6 +42,7 @@ function PersonList() {
                             {covidCases.map((covidCases, index) => {
                                 return (
                                     <tr key={index}>
+                                        <td >{index + 1}</td>
                                         <td >{covidCases.edad}</td>
                                         <td >{covidCases.sexo}</td>
                                         <td >{covidCases.tipo}</td>
