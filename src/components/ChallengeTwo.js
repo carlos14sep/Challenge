@@ -28,8 +28,8 @@ function PersonList() {
                             <button className="btn btn-secondary" onClick={getCovid}>Search</button>
                         </div>
                     </div>
-                    <table className="table table-bordered table-dark mt-5" >
-                        <thead className="thead-dark">
+                    <table className="table table-borderless" >
+                        <thead >
                             <tr>
                                 <th scope="col-3 right">Posición</th>
                                 <th scope="col">Edad</th>
