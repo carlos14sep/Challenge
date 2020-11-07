@@ -13,18 +13,29 @@ function Todolist() {
     homeWork.id = uuidv4()
     setHomeWorks([...homeWorks, homeWork])
   }
+  //elimina usuarios
+  const deleteUser = (id) => {
+    setHomeWorks(homeWorks.filter(homeWork => homeWork.id !== id))
+  }
 
   return (
     <div className="container h-100">
       <div className="row">
-        <h2 className="col-6 mt-3">Listado de Tareas</h2>
+        <h2 className="col-6 mt-3">List of tasks</h2>
         <div className="col-6 mt-3">
-          <ModalNewHomeWork addHomeWork={addHomeWork} />
+          <div>
+            <ModalNewHomeWork addHomeWork={addHomeWork} />
+          </div>
         </div>
       </div>
       <div>
         <div>
-          <TableToDoList homeWorks={homeWorks} />
+          <TableToDoList
+            TodoData={TodoData}
+            homeWorks={homeWorks}
+            setHomeWorks={setHomeWorks}
+            deleteUser={deleteUser}
+          />
         </div>
       </div>
     </div>
