@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import EditUserForm from '../components/EditUserForm.js'
 
 const ListTable = (props) => {
-  console.log(props.homeWorks)
   const [modal, setModal] = useState(false);
   const [currentHomeWork, setCurrentHomeWork] = useState(null);
   const abrirCerrar = () => {
@@ -10,7 +9,6 @@ const ListTable = (props) => {
   }
   const EditUser = () => {
     const dataUser = props.homeWorks.map((homeWork) => {
-      console.log(currentHomeWork.checked)
       if (homeWork.id===currentHomeWork.id && currentHomeWork.checked===true) {
         return currentHomeWork
       } else {

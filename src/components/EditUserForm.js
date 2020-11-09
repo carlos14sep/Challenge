@@ -5,16 +5,13 @@ import { useForm } from 'react-hook-form'
 function EditUserFrom(props) {
   const { register, handleSubmit,errors } = useForm()
   const onSubmit = (data) => {
-    console.log(data)
     props.abrirCerrar()
   }
   const handleInputChange = (e) => {
     const { name, value, checked, type } = e.target
-    console.log(e.target)
     props.setCurrentHomeWork({
       ...props.currentHomeWork, [name]: type === "checkbox" ? checked : value
     });
-    console.log(props.currentHomeWork)
   };
   return (
     <div>

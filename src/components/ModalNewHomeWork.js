@@ -7,10 +7,10 @@ const NewHomeWork = (props) => {
   const [close, setClose] = useState(false)
   const { register, errors, handleSubmit } = useForm()
     const abrirCerrar = () => {
-        setModal(!modal)
-      console.log(close)
+      setModal(!modal)
     }
   const onSubmit = (data, e) => {
+    console.log(close)
     if (close === true){
       setClose(!close)
       abrirCerrar()
@@ -18,7 +18,7 @@ const NewHomeWork = (props) => {
         props.addHomeWork(data)
         abrirCerrar()
       }
-      console.log(close)
+      abrirCerrar()
     //limpiar campos
     e.target.reset()  
   }
