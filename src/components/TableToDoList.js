@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import EditUserForm from '../components/EditUserForm.js'
 
 const ListTable = (props) => {
-  const [modal, setModal] = useState(false);
+  const [show, setShow] = useState(false);
   const [currentHomeWork, setCurrentHomeWork] = useState(null);
-  const abrirCerrar = () => {
-    setModal(!modal)
+  const handleShow = () => {
+    setShow(!show)
   }
   const EditUser = () => {
     const dataUser = props.homeWorks.map((homeWork) => {
-      if (homeWork.id===currentHomeWork.id && currentHomeWork.checked===true) {
+      if (homeWork.id === currentHomeWork.id && currentHomeWork.checked === true) {
         return currentHomeWork
       } else {
         return homeWork
@@ -30,13 +30,13 @@ const ListTable = (props) => {
         <tbody >
           {props.homeWorks.length > 0 ? (
             props.homeWorks.map((homeWork) => (
-              <tr key={homeWork.id} className={homeWork.checked?'homeWork-checked':""}>
+              <tr key={homeWork.id} className={homeWork.checked ? 'homeWork-checked' : ""}>
                 <td >{homeWork.name}</td>
                 <td>{homeWork.description}</td>
                 <button className="btn btn-warning btn-md"
                   onClick={() => {
                     setCurrentHomeWork(homeWork)
-                    abrirCerrar()
+                    handleShow()
                   }}
                 >Edit User</button>
                 <button className="btn btn-danger btn-md"
@@ -51,9 +51,9 @@ const ListTable = (props) => {
         </tbody>
       </table>
       <EditUserForm
-        modal={modal}
-        setModal={setModal}
-        abrirCerrar={abrirCerrar}
+        show={show}
+        setShow={setShow}
+        handleShow={handleShow}
         currentHomeWork={currentHomeWork}
         setCurrentHomeWork={setCurrentHomeWork}
         EditUser={EditUser}

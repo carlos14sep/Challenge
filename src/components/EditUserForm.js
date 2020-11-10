@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 
 function EditUserFrom(props) {
   const { register, handleSubmit,errors } = useForm()
   const onSubmit = (data) => {
-    props.abrirCerrar()
+    props.handleShow()
   }
   const handleInputChange = (e) => {
     const { name, value, checked, type } = e.target
@@ -15,7 +15,7 @@ function EditUserFrom(props) {
   };
   return (
     <div>
-      <Modal show={props.modal}>
+      <Modal show={props.show}>
         <Modal.Header>
           <Modal.Title>Register the table fields</Modal.Title>
         </Modal.Header>
@@ -66,12 +66,11 @@ function EditUserFrom(props) {
               <button className="btn btn-secondary my-2"
                 onClick={() => props.EditUser()}>Save Changes</button>
               <button className="btn btn-dark"
-                onClick={() => props.setModal(props.modal)}>Close</button>
+                onClick={props.handleClose}>Close</button>
             </div>
           </form>
         </Modal.Body>
       </Modal>
-
     </div>
   )
 }
