@@ -1,11 +1,13 @@
 import React from 'react';
 
 import ChallengeThree from './components/ChallengeThree.js';
+import Pruebas from './components/Pruebas';
 
 function Challenge (){
   return(
     <div>
-      <ChallengeThree/>
+        <ChallengeThree/>
+      {/* <Pruebas/> */}
     </div>
   )
  }

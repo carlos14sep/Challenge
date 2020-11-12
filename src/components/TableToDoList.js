@@ -4,18 +4,20 @@ import EditUserForm from '../components/EditUserForm.js'
 const ListTable = (props) => {
   const [show, setShow] = useState(false);
   const [currentHomeWork, setCurrentHomeWork] = useState(null);
+ 
   const handleShow = () => {
     setShow(!show)
   }
   const EditUser = () => {
-    const dataUser = props.homeWorks.map((homeWork) => {
+    const newUser = props.homeWorks.map((homeWork) => {
       if (homeWork.id === currentHomeWork.id && currentHomeWork.checked === true) {
         return currentHomeWork
       } else {
         return homeWork
       }
     });
-    { props.setHomeWorks(dataUser) }
+    // {props.setCount(props.count-1)}
+    { props.setHomeWorks(newUser) }
   }
   return (
     <>
