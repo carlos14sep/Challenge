@@ -1,12 +1,10 @@
 import React from 'react'
 import { Modal } from 'react-bootstrap'
-import { useForm } from 'react-hook-form'
 
 function EditUserFrom(props) {
-  const { register, handleSubmit,errors } = useForm()
-  
 
-  const onSubmit = (data) => {
+  const onSubmit = (event) => {
+    event.preventDefault()
     props.handleShow()
   }
   const handleInputChange = (e) => {
@@ -22,7 +20,7 @@ function EditUserFrom(props) {
           <Modal.Title>Register the table fields</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form className="" onSubmit={handleSubmit(onSubmit)}>
+          <form className="" onSubmit={onSubmit}>
             <div className="form-row">
               <div className="col-6">
                 <label>Name</label>
@@ -32,12 +30,9 @@ function EditUserFrom(props) {
                   placeholder=" Name"
                   name="name"
                   value={props.currentHomeWork ? props.currentHomeWork.name : ""}
+                  required="required"
                   onChange={handleInputChange}
-                  ref={register({
-                    required: { value: true, message: "Required field" },
-                  })}
                 />
-                <div>{errors?.description?.message}</div>
               </div>
               <div className="col-6">
                 <label>Description</label>
@@ -47,12 +42,9 @@ function EditUserFrom(props) {
                   placeholder=" Description"
                   name="description"
                   value={props.currentHomeWork ? props.currentHomeWork.description : ""}
+                  required="required"
                   onChange={handleInputChange}
-                  ref={register({
-                    required: { value: true, message: "Required field" 
-                  }})}
                 />
-                <div>{errors?.description?.message}</div>
               </div>
               <div className="custom-control custom-checkbox">
                 <input
