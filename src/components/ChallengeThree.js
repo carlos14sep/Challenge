@@ -26,7 +26,7 @@ function Todolist() {
   return (    
     <div className="container h-100"> 
       <div className="row">
-      <h2 className="col-6 mt-3">List of tasks {homeWorks.length} </h2>
+      <h2 className="col-6 mt-3">List of tasks</h2>
         
         <div className="col-6 mt-3">
           <div>

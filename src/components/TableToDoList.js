@@ -16,7 +16,6 @@ const ListTable = (props) => {
         return homeWork
       }
     });
-    // {props.setCount(props.count-1)}
     { props.setHomeWorks(newUser) }
   }
   return (

@@ -1,27 +1,18 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const NewHomeWork = (props) => {
   const [show, setShow] = useState(false);
+  const { register, errors, handleSubmit } = useForm();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [data, setData] = useState({
-    name: '',
-    description: ''
-  })
-  const handleInputChange = (event) => {
-    const { name, value } = event.target
-    setData({
-      ...data, [name]: value
-    });
-  }
-  const onSubmit = (event) => {
-    event.preventDefault()
+  const onSubmit = (data, e) => {
     props.addHomeWork(data);
     handleClose();
     //limpiar campos
-    event.target.reset();
+    e.target.reset();
   };
   return (
     <div>
@@ -29,7 +20,7 @@ const NewHomeWork = (props) => {
         Create task
       </Button>
       <Modal show={show}>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Modal.Header>
             <Modal.Title>Register the table fields</Modal.Title>
           </Modal.Header>
@@ -42,9 +33,11 @@ const NewHomeWork = (props) => {
                   className="form-control"
                   placeholder=" Name"
                   name="name"
-                  required="required"
-                  onChange={handleInputChange}
+                  ref={register({
+                    required: { value: true, message: "Required field" },
+                  })}
                 />
+                <div>{errors?.name?.message}</div>
               </div>
               <div className="col-6">
                 <label>Description</label>
@@ -53,14 +46,16 @@ const NewHomeWork = (props) => {
                   className="form-control"
                   placeholder=" Description"
                   name="description"
-                  required="required"
-                  onChange={handleInputChange}
+                  ref={register({
+                    required: { value: true, message: "Required field" },
+                  })}
                 />
+                <div>{errors?.description?.message}</div>
               </div>
             </div>
           </Modal.Body>
           <Modal.Footer>
-
+            
             <Button variant="primary" type="submit">
               Save Changes
             </Button>
@@ -69,7 +64,6 @@ const NewHomeWork = (props) => {
             </Button>
           </Modal.Footer>
         </form>
-
       </Modal>
     </div>
   );
