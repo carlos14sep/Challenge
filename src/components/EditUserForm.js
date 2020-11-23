@@ -58,10 +58,14 @@ function EditUserFrom(props) {
               </div>
             </div>
             <div className="modal-footer">
-              <button className="btn btn-secondary my-2"
-                onClick={() => props.EditUser()}>Save Changes</button>
               <button className="btn btn-dark"
-                onClick={props.handleClose}>Close</button>
+                onClick={props.handleClose}>
+                Close
+              </button>
+              <button className="btn btn-secondary my-2"
+                onClick={() => props.EditUser()}>
+                Save Changes
+              </button>
             </div>
           </form>
         </Modal.Body>

@@ -60,12 +60,11 @@ const NewHomeWork = (props) => {
             </div>
           </Modal.Body>
           <Modal.Footer>
-
-            <Button variant="primary" type="submit">
-              Save Changes
-            </Button>
             <Button variant="secondary" onClick={handleClose}>
               Close
+            </Button>
+            <Button variant="primary" type="submit">
+              Save Changes
             </Button>
           </Modal.Footer>
         </form>
