@@ -10,7 +10,8 @@ function EditUserFrom(props) {
   const handleInputChange = (e) => {
     const { name, value, checked, type } = e.target
     props.setCurrentHomeWork({
-      ...props.currentHomeWork, [name]: type === "checkbox" ? checked : value
+      ...props.currentHomeWork, 
+      [name]: type === "checkbox" ? checked : value
     });
   };
   return (
@@ -20,7 +21,7 @@ function EditUserFrom(props) {
           <Modal.Title>Register the table fields</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form className="" onSubmit={onSubmit}>
+          <form onSubmit={onSubmit}>
             <div className="form-row">
               <div className="col-6">
                 <label>Name</label>
@@ -29,8 +30,8 @@ function EditUserFrom(props) {
                   className="form-control"
                   placeholder=" Name"
                   name="name"
-                  value={props.currentHomeWork ? props.currentHomeWork.name : ""}
-                  required="required"
+                  value={props.currentHomeWork && props.currentHomeWork.name}
+                  required={true}
                   onChange={handleInputChange}
                 />
               </div>
@@ -41,8 +42,8 @@ function EditUserFrom(props) {
                   className="form-control"
                   placeholder=" Description"
                   name="description"
-                  value={props.currentHomeWork ? props.currentHomeWork.description : ""}
-                  required="required"
+                  value={props.currentHomeWork && props.currentHomeWork.description}
+                  required={true}
                   onChange={handleInputChange}
                 />
               </div>

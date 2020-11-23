@@ -10,7 +10,7 @@ const ListTable = (props) => {
   }
   const EditUser = () => {
     const newUser = props.homeWorks.map((homeWork) => {
-      if (homeWork.id === currentHomeWork.id && currentHomeWork.checked === true) {
+      if (homeWork.id === currentHomeWork.id ) {
         return currentHomeWork
       } else {
         return homeWork
